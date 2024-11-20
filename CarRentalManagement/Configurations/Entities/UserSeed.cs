@@ -10,7 +10,7 @@ namespace CarRentalManagement.Configurations.Entities
         {
             var hasher = new PasswordHasher<CarRentalManagementUser>();
             builder.HasData(
-            new ApplicationUser
+            new CarRentalManagementUser
             {
                 Id = "3781efa7-66dc-47f0-860f-e506d04102e4",
                 Email = "admin@localhost.com",
