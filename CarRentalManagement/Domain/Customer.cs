@@ -2,10 +2,10 @@
 {
     public class Customer : BaseDomainModel
     {
-        public string? DrivingLicense { get; set; }
-        public string? Address { get; set; }
-        public string? ContactNumber { get; set; }
-        public string? EmailAddress { get; set; }
+        public String? DrivingLicense { get; set; }
+        public String? Address { get; set; }
+        public String? ContactNumber { get; set; }
+        public String? EmailAddress { get; set; }
 
     }
 }

@@ -2,6 +2,6 @@
 {
     public class Colour : BaseDomainModel
     {
-        public string? Name { get; set; }
+        public String? Name { get; set; }
     }
 }

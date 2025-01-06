@@ -1,42 +1,44 @@
-﻿@page "/models/details"
+﻿@page "/makes/details"
 @using Microsoft.EntityFrameworkCore
 @using CarRentalManagement.Domain
 @inject IDbContextFactory<CarRentalManagement.Data.CarRentalManagementContext> DbFactory
 @inject NavigationManager NavigationManager
+
+
 
 <PageTitle>Details</PageTitle>
 
 <h1>Details</h1>
 
 <div>
-    <h2>Model</h2>
+    <h2>Make</h2>
     <hr />
-    @if (model is null)
+    @if (make is null)
     {
         <p><em>Loading...</em></p>
     }
     else {
         <dl class="row">
             <dt class="col-sm-2">Name</dt>
-            <dd class="col-sm-10">@model.Name</dd>
+            <dd class="col-sm-10">@make.Name</dd>
             <dt class="col-sm-2">DateCreated</dt>
-            <dd class="col-sm-10">@model.DateCreated</dd>
+            <dd class="col-sm-10">@make.DateCreated</dd>
             <dt class="col-sm-2">DateUpdated</dt>
-            <dd class="col-sm-10">@model.DateUpdated</dd>
+            <dd class="col-sm-10">@make.DateUpdated</dd>
             <dt class="col-sm-2">CreatedBy</dt>
-            <dd class="col-sm-10">@model.CreatedBy</dd>
+            <dd class="col-sm-10">@make.CreatedBy</dd>
             <dt class="col-sm-2">UpdatedBy</dt>
-            <dd class="col-sm-10">@model.UpdatedBy</dd>
+            <dd class="col-sm-10">@make.UpdatedBy</dd>
         </dl>
         <div>
-            <a href="@($"/models/edit?id={model.Id}")">Edit</a> |
-            <a href="@($"/models")">Back to List</a>
+            <a href="@($"/makes/edit?id={make.Id}")">Edit</a> |
+            <a href="@($"/makes")">Back to List</a>
         </div>
     }
 </div>
 
 @code {
-    private Model? model;
+    private Make? make;
 
     [SupplyParameterFromQuery]
     private int Id { get; set; }
@@ -44,9 +46,9 @@
     protected override async Task OnInitializedAsync()
     {
         using var context = DbFactory.CreateDbContext();
-        model = await context.Model.FirstOrDefaultAsync(m => m.Id == Id);
+        make = await context.Make.FirstOrDefaultAsync(m => m.Id == Id);
 
-        if (model is null)
+        if (make is null)
         {
             NavigationManager.NavigateTo("notfound");
         }

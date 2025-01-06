@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-namespace CarRentalManagement.Configurations.Entities
+namespace CarRentalManagement.Configuration.Entities
 {
     public class RoleSeed : IEntityTypeConfiguration<IdentityRole>
     {

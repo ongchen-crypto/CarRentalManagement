@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CarRentalManagement.Configurations.Entities
+namespace CarRentalManagement.Configuration.Entities
 {
     public class ColourSeed : IEntityTypeConfiguration<Colour>
     {
@@ -16,7 +16,7 @@ namespace CarRentalManagement.Configurations.Entities
                     DateCreated = DateTime.Now,
                     DateUpdated = DateTime.Now,
                     CreatedBy = "System",
-                    UpdatedBy = "System",
+                    UpdatedBy = "System"
                 },
                 new Colour
                 {
@@ -25,7 +25,7 @@ namespace CarRentalManagement.Configurations.Entities
                     DateCreated = DateTime.Now,
                     DateUpdated = DateTime.Now,
                     CreatedBy = "System",
-                    UpdatedBy = "System",
+                    UpdatedBy = "System"
                 }
             );      
         }
